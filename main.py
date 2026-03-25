@@ -27,7 +27,7 @@ def create_task(task: schemas.TaskCreate,db: Session=Depends(get_db)):
 
 @app.get("/tasks",response_model=list[schemas.Task])
 def read_tasks(sort_by: str | None = None,db: Session=Depends(get_db)):
-    return crud.get_tasks(db)
+    return crud.get_tasks(db,sort_by)
 
 
 

@@ -8,7 +8,7 @@ class StatusEnum(str,Enum):
 class TaskBase(BaseModel):
     title: str
     description: str | None=None
-    status: str=StatusEnum.pending
+    status: StatusEnum=StatusEnum.pending
     priority: int = 1
 
 class TaskCreate(TaskBase):
